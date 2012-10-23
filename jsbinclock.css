@@ -1,15 +1,24 @@
-.clock_row div {
-    width: 15px;
-    height: 15px;
-    margin: 1px;
-    border: 1px solid transparent;
-    border-top-left-radius: 4px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px;
-    float:left;
+.clock_row {
+    display: block;
+    width: 16.5%;
+    height:700px;
+    float: left;
 }
 
-.on { background: #3a3 !important;}
+.clock_row div {
+    width: 97%;
+    height: 25%;
+    margin: 1%;
+    background-color: #333;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+    border: 1px solid transparent;
+    float:left;
+}  
 
-.off { background: #434 !important;}
+.on { background: #3a3 !important; }
+
+.off { background: #434 !important; }
+
+.nan { background-color:transparent !important; }

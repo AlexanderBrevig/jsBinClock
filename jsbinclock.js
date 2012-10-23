@@ -8,7 +8,7 @@ var BINCLOCK = {
     this_ref.toggle("M2", timenow.getMinutes() % 10);
     this_ref.toggle("S1", Math.floor(timenow.getSeconds() / 10));
     this_ref.toggle("S2", timenow.getSeconds() % 10);
-    this_ref.applyStyles();
+    //$(".clock_row div").css("height", (window.screen.availHeight-200)/4 )
     setTimeout(function(){this_ref.tick(this_ref);}, 1000);  
   },
   
@@ -41,25 +41,6 @@ var BINCLOCK = {
       $div.addClass("on");
       $div.removeClass("off");
     }
-  },
-  
-  //this should be done by using real css, but because I'm lazy...
-  applyStyles: function(){
-    var $clock_row = $(".clock_row");
-    $clock_row.css("width", "18px");
-    $clock_row.css("float", "left");
-    
-    $clock_row = $(".clock_row div");
-    $clock_row.css("width", "15px");
-    $clock_row.css("height", "15px");
-    $clock_row.css("margin", "1px");
-    $clock_row.css("background-color", "#333");
-    $clock_row.css("border", "1px solid transparent");
-    $clock_row.css("border-radius", "4px");
-    
-    $(".on").css("background-color","red !important");
-    $(".off").css("background-color","#333 !important");
-    $(".nan").css("background-color","transparent !important");
   }
 };
 
