@@ -1,15 +1,16 @@
 var BINCLOCK = {
   
-  tick: function(this_ref) {
-    timenow = new Date();
-    this_ref.toggle("H1", Math.floor(timenow.getHours() / 10));
-    this_ref.toggle("H2", timenow.getHours() % 10);
-    this_ref.toggle("M1", Math.floor(timenow.getMinutes() / 10));
-    this_ref.toggle("M2", timenow.getMinutes() % 10);
-    this_ref.toggle("S1", Math.floor(timenow.getSeconds() / 10));
-    this_ref.toggle("S2", timenow.getSeconds() % 10);
-    //$(".clock_row div").css("height", (window.screen.availHeight-200)/4 )
-    setTimeout(function(){this_ref.tick(this_ref);}, 1000);  
+  tick: function() {
+	var self = this;
+    setInterval(function(){
+		var timenow = new Date();
+		self.toggle("H1", Math.floor(timenow.getHours() / 10));
+		self.toggle("H2", timenow.getHours() % 10);
+		self.toggle("M1", Math.floor(timenow.getMinutes() / 10));
+		self.toggle("M2", timenow.getMinutes() % 10);
+		self.toggle("S1", Math.floor(timenow.getSeconds() / 10));
+		self.toggle("S2", timenow.getSeconds() % 10);
+	}, 1000);  
   },
   
   //we could have made a function helper for toggling but
